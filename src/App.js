@@ -1,14 +1,15 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import UserProvider from './context/UserProvider';
+import IFoodProvider from './context/IFoodProvider';
 
 function App() {
   return (
-    <UserProvider>
+    <IFoodProvider>
       <Switch>
-        {/* <Route exact path="/" component={} /> */}
+        <Route exact path="/" component={} />
       </Switch>
-    </UserProvider>
+    </IFoodProvider>
   );
 }
 
