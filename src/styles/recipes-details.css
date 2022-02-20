@@ -1,4 +1,111 @@
-.recipes-details {
-  display: flex;
-  flex-direction: column;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+@media screen and (max-width: 390px) {
+  .recipes-details {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .recipe-img {
+    width: 100vw;
+    height: 234px;
+  }
+
+  .recipe-details {
+    display: flex;
+    flex-direction: column;
+    top: 200px;
+    border-radius: 20px 20px 0 0;
+    padding: 19px;
+    position: absolute;
+    background-color: white;
+    width: 78vw;
+    height: fit-content;
+  }
+
+  .recipe-details h1 {
+    left: 20px;
+    top: 214px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .fav-recipe {
+    display: flex;
+  }
+
+  .fav-recipe h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: 5px;
+  }
+
+  .ingredients-recipe {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingredients-recipe h2 {
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .ingredients-recipe h5 {
+    width: 60vw;
+    left: 22px;
+    top: 364px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #747474;
+    margin-bottom: 16px;
+  }
+
+  .ingredients-check {
+    font-size: 13px;
+  }
+
+  .add-to-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 25px;
+    padding: 15px;
+  }
+
+  .directions-recipe {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin-bottom: 10px;
+    height: fit-content;
+  }
+
+  .directions-recipe h2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 25px;
+  }
+
+  .directions-recipe li {
+    list-style: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+  }
 }

@@ -35,7 +35,6 @@ function Register() {
     }
   };
 
-
   return (
     <div className="div-register">
       <h1>Faça seu cadastro</h1>
