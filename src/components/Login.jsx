@@ -13,7 +13,7 @@ function Login() {
     password: '',
   });
 
-  const { setEmail } = useContext(IFoodContext);
+  const { setEmail, setAddress } = useContext(IFoodContext);
 
   const history = useHistory();
 
@@ -25,6 +25,7 @@ function Login() {
 
       localStorage.setItem('authorization', response.data.token);
       setEmail(response.data.email);
+      setAddress(response.data.address);
       history.push('/user/restrictions');
     } catch (error) {
       alert(error);
