@@ -1,19 +1,22 @@
-import React, { useContext, useState } from 'react';
+/* eslint-disable no-alert */
+/* eslint-disable function-paren-newline */
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Button from './Button';
-import Input from './Input';
+import Button from '../components/Button';
+import Input from '../components/Input';
 import api from '../api';
-import IFoodContext from '../context/IFoodContext';
+// import IFoodContext from '../context/IFoodContext';
 import '../styles/register-login.css';
 
 function Register() {
   const [register, setRegister] = useState({
-    username: '',
+    fullname: '',
     email: '',
     password: '',
+    address: '',
   });
 
-  const { setUsername } = useContext(IFoodContext);
+  // const { setEmail } = useContext(IFoodContext);
 
   const history = useHistory();
 
@@ -22,27 +25,32 @@ function Register() {
 
     try {
       await api.post('/user', register);
-      const response = await api.post('/login', { email: register.email, password: register.password });
+      const response = await api.post('/login',
+        { email: register.email, password: register.password });
       localStorage.setItem('authorization', response.data.token);
-      setUsername(response.data.username);
-      history.push('/profile');
+      setRegister(response.data);
+      history.push('/user/restrictions');
     } catch (error) {
       alert(error);
     }
   };
 
+  const handleClick = () => {
+    history.push('/recipes');
+  };
+
   return (
     <div className="div-register">
-      <h1>Register</h1>
+      <h1>Faça seu cadastro</h1>
       <form onSubmit={handleRegister} className="form">
         <Input
-          label="Username"
+          label="Nome Completo"
           className="input"
           type="text"
           testid="username-input"
-          value={register.username}
+          value={register.fullname}
           onChange={({ target }) => {
-            setRegister({ ...register, username: target.value });
+            setRegister({ ...register, fullname: target.value });
           }}
         />
         <Input
@@ -65,10 +73,21 @@ function Register() {
             setRegister({ ...register, password: target.value });
           }}
         />
+        <Input
+          label="Endereço"
+          className="input"
+          type="text"
+          testid="address-input"
+          value={register.address}
+          onChange={({ target }) => {
+            setRegister({ ...register, address: target.value });
+          }}
+        />
         <Button
           className="button-login-register"
           testid="register-submit-btn"
           label="Entrar"
+          onClick={handleClick}
         />
       </form>
     </div>
