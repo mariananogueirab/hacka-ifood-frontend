@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BsHeart } from 'react-icons/bs';

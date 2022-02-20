@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useContext, useEffect, useState } from 'react';
+=======
+/* eslint-disable no-console */
+import React, { useEffect, useState } from 'react';
+>>>>>>> master
 import { Link } from 'react-router-dom';
 import api from '../api';
 import Select from '../components/Select';

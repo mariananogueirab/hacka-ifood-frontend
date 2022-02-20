@@ -36,37 +36,43 @@ function Login() {
     <div className="div-login">
       <h1>Login</h1>
       <form onSubmit={handleLogin} className="form">
-        <Input
-          label="E-mail"
-          className="input"
-          type="email"
-          testid="email-input"
-          value={login.email}
-          onChange={({ target }) => {
-            setLogin({ ...login, email: target.value });
-          }}
-        />
-        <Input
-          label="Senha"
-          className="input"
-          type="password"
-          testid="password-input"
-          value={login.password}
-          onChange={({ target }) => {
-            setLogin({ ...login, password: target.value });
-          }}
-        />
-        <Button
-          className="button-login"
-          testid="login-submit-btn"
-          label="Entrar"
-        />
-        <Button
-          className="button-register"
-          testid="register-btn"
-          label="Fazer Cadastro"
-          onClick={() => history.push('/register')}
-        />
+        <div className="div-input">
+          <Input
+            label="Email"
+            className="input"
+            type="email"
+            testid="email-input"
+            value={login.email}
+            onChange={({ target }) => {
+              setLogin({ ...login, email: target.value });
+            }}
+          />
+          <Input
+            label="Senha"
+            className="input"
+            type="password"
+            testid="password-input"
+            value={login.password}
+            onChange={({ target }) => {
+              setLogin({ ...login, password: target.value });
+            }}
+          />
+        </div>
+        <div className="button-div-register">
+          <Button
+            className="button-register"
+            testid="register-btn"
+            label="Fazer Cadastro"
+            onClick={() => history.push('/register')}
+          />
+        </div>
+        <div className="button-div">
+          <Button
+            className="button-login"
+            testid="login-submit-btn"
+            label="Entrar"
+          />
+        </div>
       </form>
     </div>
   );

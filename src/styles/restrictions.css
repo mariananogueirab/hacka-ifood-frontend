@@ -1,8 +1,78 @@
-.checkbox {
-  display: inline-flex;
-  align-items: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-.checkbox-input {
-  display: none;
+@media screen and (max-width: 411px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .form h2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    text-align: center;
+  }
+  
+  .form h4 {
+    font-size: 14px;;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .checkbox {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+  }
+  
+  .checkbox checked {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+    color: red;
+  }
+
+  .restriction-btn {
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+  }
+  
+  .mais-restricoes-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    padding-bottom: 430px;
+  }
+  
+  .restricoes-btn {
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    border: none;
+  }
+  
+  .btn-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    background-color: red;
+  }
+  
+  .continue-btn {
+    font-family: 'Poppins', sans-serif;
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: 500;
+  }
 }

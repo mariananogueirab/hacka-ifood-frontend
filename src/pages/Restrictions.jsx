@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Button from '../components/Button';
 import api from '../api';
 // import IFoodContext from '../context/IFoodContext';
-// import '../styles/restrictions.css';
+import '../styles/restrictions.css';
 
 function Restrictions() {
   const [restrictions, setRestrictions] = useState([]);
@@ -37,7 +37,7 @@ function Restrictions() {
   };
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleRestrictions}>
         <h2>Queremos melhorar as nossas sugestões para você!</h2>
         <h4>Você tem alergia a algum desses elementos?</h4>
@@ -60,7 +60,7 @@ function Restrictions() {
             label="Adicionar outras alergias"
           />
         </div>
-        <div className="btn-continue">
+        <div className="btn-div">
           <Button
             className="continue-btn"
             testid="btn-continue"

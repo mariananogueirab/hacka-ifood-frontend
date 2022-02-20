@@ -37,7 +37,7 @@ function Register() {
   };
 
   return (
-    <div className="div-register">
+    <div className="div-login">
       <h1>Faça seu cadastro</h1>
       <form onSubmit={handleRegister} className="form">
         <Input
@@ -80,11 +80,13 @@ function Register() {
             setRegister({ ...register, address: target.value });
           }}
         />
-        <Button
-          className="button-login-register"
-          testid="register-submit-btn"
-          label="Entrar"
-        />
+        <div className="button-div">
+          <Button
+            className="button-login"
+            testid="register-submit-btn"
+            label="Entrar"
+          />
+        </div>
       </form>
     </div>
   );
