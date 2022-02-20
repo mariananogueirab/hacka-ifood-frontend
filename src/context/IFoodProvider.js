@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import IFoodContext from './IFoodContext';
 
 function IFoodProvider({ children }) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
 
   const contextValue = useMemo(
     () => ({
-      username, setUsername,
+      email, setEmail,
     }),
     [
-      username, setUsername,
+      email, setEmail,
     ],
   );
 
