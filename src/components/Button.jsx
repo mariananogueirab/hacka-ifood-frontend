@@ -7,6 +7,7 @@ function Button({
 }) {
   return (
     <button
+      // eslint-disable-next-line react/button-has-type
       type={type || 'submit'}
       data-testid={testid}
       disabled={disabled}
