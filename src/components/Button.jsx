@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import '../styles/button.css';
 
 function Button({
-  testid, disabled, onClick, label, className,
+  testid, disabled, onClick, label, className, type,
 }) {
   return (
     <button
-      type="submit"
+      type={type || 'submit'}
       data-testid={testid}
       disabled={disabled}
       onClick={onClick}
@@ -25,6 +25,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  type: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -32,6 +33,7 @@ Button.defaultProps = {
   onClick: undefined,
   className: undefined,
   testid: undefined,
+  type: undefined,
 };
 
 export default Button;

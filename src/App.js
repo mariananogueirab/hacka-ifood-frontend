@@ -7,7 +7,6 @@ import Restrictions from './pages/Restrictions';
 import IFoodProvider from './context/IFoodProvider';
 import RecipeDetails from './pages/RecipeDetails';
 import Recipes from './pages/Recipes';
-import Login from './components/Login';
 
 function App() {
   return (

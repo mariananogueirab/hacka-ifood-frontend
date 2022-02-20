@@ -10,7 +10,7 @@ import api from '../api';
 
 function Restrictions() {
   const [restrictions, setRestrictions] = useState([]);
-  const restrictionsArr = ['Amendoim', 'Ovo', 'Leite', 'Camarão', 'Soja']
+  const restrictionsArr = ['Amendoim', 'Ovo', 'Leite', 'Camarão', 'Soja'];
 
   const history = useHistory();
 
@@ -26,7 +26,7 @@ function Restrictions() {
         },
       });
       setRestrictions(response.data);
-      history.push('/');
+      history.push('/recipes');
     } catch (error) {
       alert(error);
     }
@@ -44,40 +44,14 @@ function Restrictions() {
         <div className="checkbox">
           {restrictionsArr.map((restriction) => (
             <Button
-            label={restriction}
-            className="restriction-btn"
-            testid="restriction-btn"
-            onClick={() => handleClick(restriction)}
-          />
+              label={restriction}
+              className="restriction-btn"
+              testid="restriction-btn"
+              type="button"
+              onClick={() => handleClick(restriction)}
+            />
           ))}
-          {/* <Button
-            label="Amendoim"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Amendoim')}
-          />
-          <Button
-            label="Ovo"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Ovo')}
-          />
-          <Button
-            label="Leite"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Leite')}
-          />
-          <Button
-            label="Camarão"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Camarão')}
-          /> */}
+
         </div>
         <div className="mais-restricoes-btn">
           <Button

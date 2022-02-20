@@ -11,8 +11,6 @@ function IFoodProvider({ children }) {
     password: '',
   }); */
 
-  const [email, setEmail] = useState({ email: '' });
-
   const ContextValue = useMemo(
     () => ({
       email, setEmail,
