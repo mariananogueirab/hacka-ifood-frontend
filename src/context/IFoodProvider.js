@@ -4,19 +4,25 @@ import PropTypes from 'prop-types';
 import IFoodContext from './IFoodContext';
 
 function IFoodProvider({ children }) {
-  const [username, setUsername] = useState('');
+  /*  const [register, setRegister] = useState({
+    name: '',
+    email: '',
+    password: '',
+  }); */
 
-  const contextValue = useMemo(
+  const [email, setEmail] = useState({ email: '' });
+
+  const ContextValue = useMemo(
     () => ({
-      username, setUsername,
+      email, setEmail,
     }),
     [
-      username, setUsername,
+      email, setEmail,
     ],
   );
 
   return (
-    <IFoodContext.Provider value={contextValue}>
+    <IFoodContext.Provider value={ContextValue}>
       {children}
     </IFoodContext.Provider>
   );

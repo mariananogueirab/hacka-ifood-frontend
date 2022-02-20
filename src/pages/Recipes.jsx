@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+/* import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-
 
 function Recipes() {
   const { username } = useContext(UserContext);
@@ -12,7 +11,7 @@ function Recipes() {
   };
 
   return (
-    <div></div>>
+    <div></div>
   );
 }
-export default Recipes;
+export default Recipes; */
