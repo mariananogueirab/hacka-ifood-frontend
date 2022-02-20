@@ -10,6 +10,7 @@ import api from '../api';
 
 function Restrictions() {
   const [restrictions, setRestrictions] = useState([]);
+  const restrictionsArr = ['Amendoim', 'Ovo', 'Leite', 'Camarão', 'Soja'];
 
   const history = useHistory();
 
@@ -25,7 +26,7 @@ function Restrictions() {
         },
       });
       setRestrictions(response.data);
-      history.push('/');
+      history.push('/recipes');
     } catch (error) {
       alert(error);
     }
@@ -41,34 +42,16 @@ function Restrictions() {
         <h2>Queremos melhorar as nossas sugestões para você!</h2>
         <h4>Você tem alergia a algum desses elementos?</h4>
         <div className="checkbox">
-          <Button
-            label="Amendoim"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Amendoim')}
-          />
-          <Button
-            label="Ovo"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Ovo')}
-          />
-          <Button
-            label="Leite"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Leite')}
-          />
-          <Button
-            label="Camarão"
-            className="checkbox-input"
-            type="checkbox"
-            testid="checkbox-input"
-            onClick={() => handleClick('Camarão')}
-          />
+          {restrictionsArr.map((restriction) => (
+            <Button
+              label={restriction}
+              className="restriction-btn"
+              testid="restriction-btn"
+              type="button"
+              onClick={() => handleClick(restriction)}
+            />
+          ))}
+
         </div>
         <div className="mais-restricoes-btn">
           <Button

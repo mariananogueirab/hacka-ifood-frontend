@@ -1,11 +1,11 @@
 /* eslint-disable no-alert */
 /* eslint-disable function-paren-newline */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import api from '../api';
-// import IFoodContext from '../context/IFoodContext';
+import IFoodContext from '../context/IFoodContext';
 import '../styles/register-login.css';
 
 function Register() {
@@ -16,7 +16,7 @@ function Register() {
     address: '',
   });
 
-  // const { setEmail } = useContext(IFoodContext);
+  const { setEmail } = useContext(IFoodContext);
 
   const history = useHistory();
 
@@ -29,6 +29,7 @@ function Register() {
         { email: register.email, password: register.password });
       localStorage.setItem('authorization', response.data.token);
       setRegister(response.data);
+      setEmail(register.email);
       history.push('/user/restrictions');
     } catch (error) {
       alert(error);
