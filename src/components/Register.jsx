@@ -2,15 +2,15 @@
 /* eslint-disable function-paren-newline */
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Button from '../components/Button';
-import Input from '../components/Input';
+import Button from './Button';
+import Input from './Input';
 import api from '../api';
 import IFoodContext from '../context/IFoodContext';
 import '../styles/register-login.css';
 
 function Register() {
   const [register, setRegister] = useState({
-    fullname: '',
+    name: '',
     email: '',
     password: '',
     address: '',
@@ -25,10 +25,9 @@ function Register() {
 
     try {
       await api.post('/user', register);
-      const response = await api.post('/login',
-        { email: register.email, password: register.password });
+      const response = await api.post('/login', { email: register.email, password: register.password });
+
       localStorage.setItem('authorization', response.data.token);
-      setRegister(response.data);
       setEmail(register.email);
       history.push('/user/restrictions');
     } catch (error) {
@@ -36,9 +35,6 @@ function Register() {
     }
   };
 
-  const handleClick = () => {
-    history.push('/recipes');
-  };
 
   return (
     <div className="div-register">
@@ -49,9 +45,9 @@ function Register() {
           className="input"
           type="text"
           testid="username-input"
-          value={register.fullname}
+          value={register.name}
           onChange={({ target }) => {
-            setRegister({ ...register, fullname: target.value });
+            setRegister({ ...register, name: target.value });
           }}
         />
         <Input
@@ -88,7 +84,6 @@ function Register() {
           className="button-login-register"
           testid="register-submit-btn"
           label="Entrar"
-          onClick={handleClick}
         />
       </form>
     </div>

@@ -13,11 +13,23 @@ function Recipes() {
   useEffect(async () => {
     let response = {};
     try {
-      response = await api.get('/recipes', {
-        headers: {
-          authorization,
-        },
-      });
+      if (filterValue === '') {
+        response = await api.get('/recipes/all', {
+          headers: {
+            authorization,
+          },
+        });
+        console.log('FILTER VAZIO', response);
+      } else {
+        response = await api.get(`/recipes/?filter=${filterValue}`, {
+          headers: {
+            authorization,
+          },
+        });
+        console.log('FILTER cheio', response);
+      }
+
+      console.log('filter', filterValue);
       if (response.data.length > 0) setRecipes(response.data);
     } catch (error) {
       console.log(error.response.data.message);

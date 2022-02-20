@@ -25,7 +25,7 @@ function Login() {
 
       localStorage.setItem('authorization', response.data.token);
       setEmail(response.data.email);
-      history.push('/recipes');
+      history.push('/user/restrictions');
     } catch (error) {
       alert(error);
     }
