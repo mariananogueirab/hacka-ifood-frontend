@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from './Button';
@@ -12,7 +13,7 @@ function Login() {
     password: '',
   });
 
-  const { setUsername } = useContext(IFoodContext);
+  const { setEmail } = useContext(IFoodContext);
 
   const history = useHistory();
 
@@ -23,8 +24,8 @@ function Login() {
       const response = await api.post('/login', login);
 
       localStorage.setItem('authorization', response.data.token);
-      setUsername(response.data.username);
-      history.push('/profile');
+      setEmail(response.data.email);
+      history.push('/user/restrictions');
     } catch (error) {
       alert(error);
     }
@@ -55,9 +56,15 @@ function Login() {
           }}
         />
         <Button
-          className="button-login-register"
+          className="button-login"
           testid="login-submit-btn"
           label="Entrar"
+        />
+        <Button
+          className="button-register"
+          testid="register-btn"
+          label="Fazer Cadastro"
+          onClick={() => history.push('/register')}
         />
       </form>
     </div>
