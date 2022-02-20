@@ -5,18 +5,14 @@ import IFoodContext from './IFoodContext';
 
 function IFoodProvider({ children }) {
   const [email, setEmail] = useState('');
-  /*  const [register, setRegister] = useState({
-    name: '',
-    email: '',
-    password: '',
-  }); */
+  const [address, setAddress] = useState('');
 
   const ContextValue = useMemo(
     () => ({
-      email, setEmail,
+      email, setEmail, address, setAddress,
     }),
     [
-      email, setEmail,
+      email, setEmail, address, setAddress,
     ],
   );
 

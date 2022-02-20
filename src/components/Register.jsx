@@ -16,7 +16,7 @@ function Register() {
     address: '',
   });
 
-  const { setEmail } = useContext(IFoodContext);
+  const { setEmail, setAddress } = useContext(IFoodContext);
 
   const history = useHistory();
 
@@ -29,6 +29,7 @@ function Register() {
 
       localStorage.setItem('authorization', response.data.token);
       setEmail(register.email);
+      setAddress(register.address);
       history.push('/user/restrictions');
     } catch (error) {
       alert(error);

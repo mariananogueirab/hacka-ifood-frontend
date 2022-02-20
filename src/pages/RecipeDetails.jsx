@@ -1,6 +1,8 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { BsHeart } from 'react-icons/bs';
 import api from '../api';
 import '../styles/recipes-details.css';
 
@@ -30,43 +32,52 @@ function RecipeDetails() {
     const ingredientsBuy = recipe.ingredients
       .filter((ing) => !haveIngredients.includes(ing));
     setIngredientsToBy(ingredientsBuy);
+    console.log(ingredientsToBy);
   };
 
   return (
     <div className="recipes-details">
-      <img src={recipe.image} alt={recipe.title} />
-      <h1>{recipe.title}</h1>
+      <img src={recipe.image} alt={recipe.title} className="recipe-img" />
 
-      <h2>Ingredientes</h2>
-      <h5>Marque os ingredientes que você tem em casa</h5>
-      {recipe.ingredients?.map((ingredient) => (
-        <div>
-          <label className="label-checkbox" htmlFor={ingredient}>
-            <input
-              type="checkbox"
-              id={ingredient}
-              key={ingredient}
-              onClick={() => handleClick(ingredient)}
-              className="checkbox"
-            />
-            {ingredient}
-          </label>
+      <div className="recipe-details">
+        <h1>{recipe.title}</h1>
+        <div className="fav-recipe">
+          <BsHeart color="red" size="20px" />
+          <h3>Adicionar aos favoritos</h3>
         </div>
-      ))}
+        <div className="ingredients-recipe">
+          <h2>Ingredientes</h2>
+          <h5>Você pode adicionar os ingredientes que já tem, e nós te ajudaremos a encontrar o restante</h5>
+          {recipe.ingredients?.map((ingredient) => (
+            <div className="ingredients-check">
+              <label className="label-checkbox" htmlFor={ingredient}>
+                <input
+                  type="checkbox"
+                  id={ingredient}
+                  key={ingredient}
+                  onClick={() => handleClick(ingredient)}
+                  className="checkbox"
+                />
+                {ingredient}
+              </label>
+            </div>
+          ))}
+        </div>
 
-      <h2>Modo de preparo</h2>
+        <div className="add-to-cart">
+          Adicionar ao carrinho ingredientes restantes
+        </div>
 
-      {recipe.directions?.map((direction) => (
-        <li>{direction}</li>
-      ))}
+        <div className="directions-recipe">
+          <h2>Modo de preparo</h2>
 
-      <div>
-        <h3>Encontramos um mercado com os ingredientes restantes, deseja ir para o carrinho?</h3>
-        {ingredientsToBy.map((ingredient) => (
-          <li>{ingredient}</li>
-        ))}
+          {recipe.directions?.map((direction) => (
+            <li>{direction}</li>
+          ))}
+
+        </div>
+
       </div>
-      <div>Escolher outro mercado</div>
     </div>
   );
 }
