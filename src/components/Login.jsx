@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from './Button';
@@ -55,9 +56,15 @@ function Login() {
           }}
         />
         <Button
-          className="button-login-register"
+          className="button-login"
           testid="login-submit-btn"
           label="Entrar"
+        />
+        <Button
+          className="button-register"
+          testid="register-btn"
+          label="Fazer Cadastro"
+          onClick={() => history.push('/register')}
         />
       </form>
     </div>
