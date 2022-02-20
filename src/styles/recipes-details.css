@@ -25,7 +25,7 @@
     padding: 19px;
     position: absolute;
     background-color: white;
-    width: 78vw;
+    width: 100vw;
     height: fit-content;
   }
 
@@ -60,7 +60,7 @@
   }
 
   .ingredients-recipe h5 {
-    width: 60vw;
+    width: 100vw;
     left: 22px;
     top: 364px;
     font-style: normal;
@@ -73,6 +73,8 @@
 
   .ingredients-check {
     font-size: 13px;
+    width: 100vw;
+    display: flex;
   }
 
   .add-to-cart {
@@ -90,7 +92,7 @@
   .directions-recipe {
     display: flex;
     flex-direction: column;
-    width: 60vw;
+    width: 80vw;
     margin-bottom: 10px;
     height: fit-content;
   }
