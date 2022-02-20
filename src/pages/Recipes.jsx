@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../api';
 import Select from '../components/Select';
+import '../styles/recipes.css';
 
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
@@ -24,13 +25,12 @@ function Recipes() {
   }, [filterValue]);
 
   return (
-    <div>
+    <div className="container">
       <div>
         <h2>Restaurantes</h2>
         <h2>Mercados</h2>
         <h2>iFree</h2>
       </div>
-      <h1>Receitas</h1>
       <Select
         label="Filtrar por"
         options={filterOptions}
