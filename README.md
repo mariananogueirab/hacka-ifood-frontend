@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Frontend Developer Challenge - HackaIFood
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contexto:
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Dentro da nossa vertical de Restaurantes, temos um time que olha para o catálogo. Eles usam informações de receitas e ingredientes para saber se algum item do cardápio potencialmente pode ter glúten, ser vegetariano ou vegano. Essa identificação acontece através de uma inteligência artificial construída aqui dentro do iFood. Agora, nosso desafio é desbravar outras oportunidades em que a identificação de receitas e/ou ingredientes possa ser aplicada - seja na nossa vertical de Restaurantes, seja na de Mercado.
 
-### `npm start`
+Por isso, perguntamos: que outros produtos ou modelos de negócio você enxerga que podem ser construídos levando em consideração receitas e ingredientes? Está permitido o uso de tecnologias dos mais diversos tipos, desde que
+contribuam para nosso objetivo de tornar a vida dos nossos consumidores mais prática e potencializar as vendas dos nossos parceiros.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Então, chame seus amigos e traga suas ideias mais incríveis para repensar o
+processo de compras de alimentos, das prateleiras dos mercados às nossas casas,
+utilizando inteligência artificial, dados, e qualquer outro recurso que sua
+imaginação permitir!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Funcionalidades:
+Cadastrar um usuário novo;
+Fazer login;
+Cadastro de restrições alimentares;
+Sugestão de receitas;
+Detalhes de uma receita;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Foi implementado apenas o básico para a visualização da ideia. 
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instruções para rodar o projeto local
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Pre-requisitos para rodar o projeto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- NPM
 
-### `npm run eject`
+2. Clone o repositório:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Copie o ssh do projeto `git@github.com:mariananogueirab/hacka-ifood-frontend.git`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  * `git clone git@github.com:mariananogueirab/hacka-ifood-frontend.git`
+  * `cd hacka-ifood-frontend`
+  * `npm install`
+  * `npm start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
