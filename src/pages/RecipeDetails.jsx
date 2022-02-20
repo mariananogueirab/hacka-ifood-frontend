@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../api';
+import '../styles/recipes-details.css';
 
 function RecipeDetails() {
   const [recipe, setRecipe] = useState({});
@@ -31,8 +32,7 @@ function RecipeDetails() {
   };
 
   return (
-    <div>
-      DETALHES DA RECEITA
+    <div className="recipes-details">
       <img src={recipe.image} alt={recipe.title} />
       <h1>{recipe.title}</h1>
 
