@@ -12,7 +12,7 @@ function Login() {
     password: '',
   });
 
-  const { setUsername } = useContext(IFoodContext);
+  const { setEmail } = useContext(IFoodContext);
 
   const history = useHistory();
 
@@ -23,8 +23,8 @@ function Login() {
       const response = await api.post('/login', login);
 
       localStorage.setItem('authorization', response.data.token);
-      setUsername(response.data.username);
-      history.push('/profile');
+      setEmail(response.data.email);
+      history.push('/recipes');
     } catch (error) {
       alert(error);
     }
